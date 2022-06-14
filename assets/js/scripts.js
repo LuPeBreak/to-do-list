@@ -13,14 +13,16 @@ form.addEventListener("submit", (event) => {
     value: input.value,
   });
 
-  updateListView(toDoList);
+  input.value = "";
 
+  updateListView(toDoList);
 });
 
 function changeComplete(id) {
   toDoList[id].complete = !toDoList[id].complete;
   updateListView();
 }
+
 function deleteToDo(id) {
   toDoList.splice(id, 1);
   updateListView();
